@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Students{% endblock %}
+
+{% block content %}
+    <h1>Students</h1>
+
+    {% if show and students %}
+        <ul>
+            {% for student in students %}
+                <li>
+                    {{ student.first_name }} {{ student.last_name }}
+                    — Grade: {{ student.grade_level }} ({{ student.percentage }}%)
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No students available.</p>
+    {% endif %}
+{% endblock %}

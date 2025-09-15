@@ -1,0 +1,39 @@
+{% extends "blog/base.html" %}
+{% block title %}
+    Post Details
+{% endblock %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    h5{
+        color: aqua;
+        margin: 3px;
+    }
+    h4{
+        margin: 2px;
+    }
+    .headerText{
+        color: springgreen;
+        font-family: "Segoe UI", system-ui, sans-serif;
+    }
+</style>
+<body>
+
+<h1 class="headerText">Hi!</h1>
+<div style="display: flex ;width: fit-content;padding: 10px;background-color: deepskyblue;font-family: arial;flex-direction: column;align-items: center;gap:2px;border: aqua 1px solid;border-radius: 6px">
+    <h2 >{{ post.id }}</h2>
+    <h4>{{ post.title }}</h4>
+    <h5>{{ post.author }}</h5>
+    <h5>{{ post.content }}</h5>
+    <h5>{{ post.created_at }}</h5>
+    <h5>{{ post.updated_at }}</h5>
+</div>
+</body>
+</html>
+{% endblock %}

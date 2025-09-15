@@ -1,0 +1,32 @@
+{% extends "blog/base.html" %}
+
+{% block title %}
+    All Posts - Mini Blog
+{% endblock %}
+
+{% block content %}
+{% if posts %}
+    <h1>All Posts</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Content</th>
+            <th>DateTime</th>
+            <th>#</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for p in posts %}
+            {% include 'blog/_post_row.html' with p=p %}
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <div style="border-top: 1px solid red;border-bottom: 1px solid red;width: 30%;padding: 5px 0">Have Not Any Post</div>
+    {% endif %}
+{% endblock %}
+
+

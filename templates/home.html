@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ course }} - Ana Səhifə</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'blog/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Salam, {{ name }}</h1>
+    </header>
+
+    <main>
+        <p><strong>{{ course }}</strong> kursuna xoş gəldiniz!</p>
+    </main>
+
+    <footer>
+        <p>&copy; {{ course }} {{ now|date:"Y" }}</p>
+    </footer>
+</body>
+</html>

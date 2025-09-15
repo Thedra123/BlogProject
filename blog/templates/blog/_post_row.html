@@ -1,0 +1,36 @@
+<style>
+    button{
+        cursor: pointer;
+        border:1px solid springgreen;
+        border-radius: 3px;
+        padding: 5px;
+        background-color: chocolate;
+    }
+</style>
+<tr>
+    <td>
+        <a style="cursor: pointer;text-decoration:none" href="post/{{ p.id }}">{{ p.title }}</a>
+        <span class="muted">{{ p.content|truncatechars:80 }}</span>
+    </td>
+    <td>
+        {{ p.author }}
+    </td>
+    <td>
+        {{ p.created_at|date:"Y-m-d H:i" }}
+        {% if p.updated_at %}
+            <br/>
+            <span class="muted">
+            upd: {{ p.updated_at|date:"Y-m-d H:i" }}
+            </span>
+        {% endif %}
+    </td>
+    <td>
+
+    </td>
+    <td>
+       <form method="post" action='post/{{p.id}}/delete'>
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+    </td>
+</tr>
